@@ -20,6 +20,12 @@ export default {
         ring: "var(--ring)",
         background: "var(--background)",
         foreground: "var(--foreground)",
+        selected: "var(--selected)",
+        delete: "var(--delete)",
+        "new-notification-circle": "var(--new-notification-circle)",
+        "viewed-notification-circle": "var(--viewed-notification-circle)",
+        "new-notification": "var(--new-notification)",
+        "viewed-notification": "var(--viewed-notification)",
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
