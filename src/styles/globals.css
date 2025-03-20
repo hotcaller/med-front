@@ -27,7 +27,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
+  --muted: oklch(0.952 0 0);
   --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
@@ -44,18 +44,18 @@
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.879 0.126 146.83);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
 
   --selected: oklch(0.879 0.126 146.83);
-  --new-notification-circle: oklch(88.9% 0.0653 156.5);
-  --viewed-notification-circle: oklch(97.91% 0 0);
-  --new-notification: oklch(95.21% 0 0); 
-  --viewed-notification: oklch(98.21% 0 0);
-  --delete: oklch(69.21% 0.1188 24.41);
+  --delete: oklch(0.791 0.1188 24.41);
+  --delete-hover: oklch(0.84 0.1188 24.41);
+  --new-notification-circle: oklch(0.889 0.0653 156.5);
+  --checked-notification-circle: oklch(0.952 0 0);
+  --star: oklch(0.854 0.1744 88.77)
 }
 
 .dark {
@@ -129,6 +129,12 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
+  --color-selected: var(--selected);
+  --color-delete: var(--delete);
+  --color-delete-hover: var(--delete-hover);
+  --color-new-notification-circle: var(--new-notification-circle);
+  --color-checked-notification-circle: var(--checked-notification-circle); 
+  --color-star: var(--star);
 }
 
 @layer base {

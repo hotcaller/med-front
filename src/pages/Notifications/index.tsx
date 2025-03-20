@@ -1,10 +1,16 @@
-const Notifications = () => {
+import NotificationsCard from "./modules/NotificationsCard";
+import NotificationModal from "./modules/NotificationModal";
+import { NotificationProvider } from "./hooks/NotificationProvider";
+
+const NotificationsPage = () => {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Notifications</h1>
-      <p>Notifications content will be displayed here.</p>
-    </div>
+    <NotificationProvider>
+      <div className="mx-auto pt-6">
+        <NotificationsCard />
+        <NotificationModal />
+      </div>
+    </NotificationProvider>
   );
 };
 
-export default Notifications;
+export default NotificationsPage;

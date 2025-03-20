@@ -17,4 +17,10 @@ export default defineConfig({
   ],
   assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg'],
   publicDir: 'public',
+  resolve: {
+    alias: {
+      '@tabler/icons-react': '@tabler/icons-react/dist/esm/icons/index.mjs',
+
+    },
+  },
 });

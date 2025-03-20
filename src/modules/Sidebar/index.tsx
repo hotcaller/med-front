@@ -1,12 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { 
-  Bell, 
-  BellRing, 
-  MessageSquare, 
-  MessageSquareDashed, 
-  ShieldCheck, 
-  ShieldAlert 
-} from "lucide-react";
+  IconBell, 
+  IconBellFilled, 
+  IconMessage, 
+  IconMessageFilled, 
+  IconShield, 
+  IconShieldFilled 
+} from "@tabler/icons-react";
 
 type SidebarItem = {
   name: string;
@@ -21,23 +21,24 @@ const Sidebar = () => {
 
   const sidebarItems: SidebarItem[] = [
     {
-      name: "Notifications",
+      name: "Уведомления",
       path: "/notifications",
-      icon: <Bell className="h-6 w-6" />,
-      activeIcon: <BellRing className="h-6 w-6" />,
+      icon: <IconBell className="h-6 w-6" />,
+      activeIcon: <IconBellFilled className="h-6 w-6" />,
     },
     {
-      name: "Feedback",
+      name: "Обратная связь",
       path: "/feedback",
-      icon: <MessageSquare className="h-6 w-6" />,
-      activeIcon: <MessageSquareDashed className="h-6 w-6" />,
+      icon: <IconMessage className="h-6 w-6" />,
+      activeIcon: <IconMessageFilled className="h-6 w-6" />,
     },
-    {
-      name: "Admin",
-      path: "/admin",
-      icon: <ShieldCheck className="h-6 w-6" />,
-      activeIcon: <ShieldAlert className="h-6 w-6" />,
-    },
+    // {
+    //   name: "Admin",
+    //   path: "/admin",
+    //   icon: <IconShield className="h-6 w-6" />,
+    //   activeIcon: <IconShieldFilled className="h-6 w-6" />,
+    // }, 
+    // ! руты /admin/notifications, /admin/feedback
   ];
 
   return (
@@ -59,7 +60,7 @@ const Sidebar = () => {
                 className={`flex items-center px-4 py-3 rounded-md transition-colors ${
                   isActive 
                     ? "bg-sidebar-accent text-sidebar-accent-foreground" 
-                    : "text-sidebar-foreground hover:bg-sidebar-accent/10"
+                    : "text-sidebar-foreground "
                 }`}
               >
                 <div className="mr-3">

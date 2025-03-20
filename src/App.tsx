@@ -14,7 +14,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Navigate to="/notifications" replace />} />
+            <Route index element={<Navigate to="notifications" replace />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="feedback" element={<Feedback />} />
             <Route path="admin" element={<Admin />} />
