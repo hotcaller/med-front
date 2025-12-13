@@ -119,8 +119,8 @@ const Sidebar = () => {
           )}
 
           <div className="flex items-center mb-8">
-            <div className="h-12 w-12 rounded-md flex items-center justify-center shrink-0">
-              <span className=" text-black font-bold text-xl">
+            <div className="rounded-md flex items-center justify-center shrink-0">
+              <span className="bg-white text-black font-bold text-">
                 <img src="/logo.svg" alt="" />
               </span>
             </div>
