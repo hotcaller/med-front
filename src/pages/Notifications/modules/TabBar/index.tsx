@@ -1,9 +1,9 @@
 import { Badge } from "@/components/ui/badge";
-import { NotificationType } from "@/shared/types/notifications";
+import { FilterOptions } from "@/shared/types/notifications";
 
 type TabBarProps = {
-  activeTab: NotificationType;
-  setActiveTab: (tab: NotificationType) => void;
+  activeTab: FilterOptions;
+  setActiveTab: (tab: FilterOptions) => void;
   counts: {
     all: number;
     new: number;
@@ -14,7 +14,7 @@ type TabBarProps = {
 
 const TabBar = ({ activeTab, setActiveTab, counts }: TabBarProps) => {
   return (
-    <div className="flex border-b mb-4">
+    <div className="flex flex-col sm:flex-row border-b mb-4">
       <TabButton
         label="Все"
         count={counts.all}
@@ -22,7 +22,7 @@ const TabBar = ({ activeTab, setActiveTab, counts }: TabBarProps) => {
         onClick={() => setActiveTab("all")}
       />
       <TabButton
-        label="Новые"
+        label="Непрочитанные"
         count={counts.new}
         isActive={activeTab === "new"}
         onClick={() => setActiveTab("new")}

@@ -48,7 +48,7 @@ export const ReminderDialog = ({
               <IconChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-full">
+          <DropdownMenuContent className="w-80 sm:w-full">
             {reminderOptions.map((option) => (
               <DropdownMenuItem
                 key={option}

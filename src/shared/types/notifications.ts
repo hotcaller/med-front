@@ -1,13 +1,14 @@
 
-type NotificationType = "all" | "new" | "old" | "favourite";
+type FilterOptions = "all" | "new" | "old" | "favourite";
 type SortType = "newest" | "oldest" | "a-z" | "z-a";
-
+type NotificationType = "news" | "reminder" | "warning" | "important"
 type Notification = {
   id: string;
-  title: string;
-  description: string;
-  date: string;
+  header: string;
+  message: string;
+  type: NotificationType
+  created_at: string
 };
 
 
-export type { NotificationType, SortType, Notification };
+export type { FilterOptions, SortType, Notification, NotificationType};

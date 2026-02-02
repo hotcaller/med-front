@@ -1,10 +1,16 @@
+import FeedbackCard from "./modules/FeedbackCard";
+import FeedbackModal from "./modules/FeedbackAnswerModal";
+import { FeedbackProvider } from "./hooks/FeedbackProvider";
+
 const Feedback = () => {
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-4">Feedback</h1>
-      <p>Feedback content will be displayed here.</p>
-    </div>
+    <FeedbackProvider>
+      <div className="mx-auto pt-6">
+        <FeedbackCard />
+        <FeedbackModal />
+      </div>
+    </FeedbackProvider>
   );
 };
 
-export default Feedback;
+export default Feedback;  

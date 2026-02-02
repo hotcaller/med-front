@@ -20,34 +20,37 @@ interface NotificationsStore {
 export const useNotificationsStore = create<NotificationsStore>()(
   persist(
     (set, get) => ({
-      // Initial state
       starredIds: [],
       checkedIds: [],
       deletedIds: [],
       
-      // Star methods
       isStarred: (id: string) => {
-        return get().starredIds.includes(id);
+        const stringId = String(id);
+        return get().starredIds.includes(stringId);
       },
       
       toggleStar: (id: string) => {
+        const stringId = String(id);
         const { starredIds } = get();
-        if (starredIds.includes(id)) {
-          set({ starredIds: starredIds.filter(starredId => starredId !== id) });
+        
+        if (starredIds.includes(stringId)) {
+          set({ starredIds: starredIds.filter(starredId => starredId !== stringId) });
         } else {
-          set({ starredIds: [...starredIds, id] });
+          set({ starredIds: [...starredIds, stringId] });
         }
       },
       
-      // Read/checked methods
       isChecked: (id: string) => {
-        return get().checkedIds.includes(id);
+        const stringId = String(id);
+        return get().checkedIds.includes(stringId);
       },
       
       markAsChecked: (id: string) => {
+        const stringId = String(id);
         const { checkedIds } = get();
-        if (!checkedIds.includes(id)) {
-          set({ checkedIds: [...checkedIds, id] });
+        
+        if (!checkedIds.includes(stringId)) {
+          set({ checkedIds: [...checkedIds, stringId] });
         }
       },
       
@@ -56,8 +59,9 @@ export const useNotificationsStore = create<NotificationsStore>()(
         const newCheckedIds = [...checkedIds];
         
         ids.forEach(id => {
-          if (!newCheckedIds.includes(id)) {
-            newCheckedIds.push(id);
+          const stringId = String(id);
+          if (!newCheckedIds.includes(stringId)) {
+            newCheckedIds.push(stringId);
           }
         });
         
@@ -65,19 +69,27 @@ export const useNotificationsStore = create<NotificationsStore>()(
       },
 
       isDeleted: (id: string) => {
-        return get().deletedIds.includes(id);
+        const stringId = String(id);
+        return get().deletedIds.includes(stringId);
       },
 
       deleteNotification: (id: string) => {
+        const stringId = String(id);
         const { deletedIds } = get();
-        if (!deletedIds.includes(id)) {
-          set({ deletedIds: [...deletedIds, id] });
-        }
+        set({ deletedIds: [...deletedIds, stringId] });
       },
-
     }),
     {
-      name: 'notifications-store', 
+      name: 'notifications-store',
+      migrate: (persistedState: any, version) => {
+        return {
+          ...persistedState,
+          starredIds: persistedState.starredIds?.map(String) || [],
+          checkedIds: persistedState.checkedIds?.map(String) || [],
+          deletedIds: persistedState.deletedIds?.map(String) || [],
+        };
+      },
+      version: 1, 
     }
   )
 );

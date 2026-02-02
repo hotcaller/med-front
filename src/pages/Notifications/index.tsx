@@ -2,7 +2,7 @@ import NotificationsCard from "./modules/NotificationsCard";
 import NotificationModal from "./modules/NotificationModal";
 import { NotificationProvider } from "./hooks/NotificationProvider";
 
-const NotificationsPage = () => {
+const Notifications = () => {
   return (
     <NotificationProvider>
       <div className="mx-auto pt-6">
@@ -13,4 +13,4 @@ const NotificationsPage = () => {
   );
 };
 
-export default NotificationsPage;
+export default Notifications;

@@ -3,16 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 
-const warningOptions = [
-    "Отмена записи",
-    "Перенос записи"
-];
-
 interface WarningDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  selectedWarning: string;
-  setSelectedWarning: (value: string) => void;
   customTitle: string;
   setCustomTitle: (value: string) => void;
   message: string;
@@ -23,8 +16,6 @@ interface WarningDialogProps {
 export const WarningDialog = ({
   open,
   onOpenChange,
-  selectedWarning,
-  setSelectedWarning,
   customTitle,
   setCustomTitle,
   message,
@@ -37,17 +28,7 @@ export const WarningDialog = ({
         <DialogTitle>{"Отправить предупреждение"}</DialogTitle>
       </DialogHeader>
       <div className="space-y-4">
-        <div className="flex gap-2">
-          {warningOptions.map((option) => (
-            <Button
-              key={option}
-              variant={selectedWarning === option ? "default" : "outline"}
-              onClick={() => setSelectedWarning(option)}
-            >
-              {option}
-            </Button>
-          ))}
-        </div>
+
         <Input 
           placeholder="Введите свой заголовок" 
           value={customTitle}
